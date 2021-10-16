@@ -1,0 +1,29 @@
+@mixin mobileLandscape() {
+    @media (min-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop() {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop2() {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin desktop3() {
+    @media (min-width: 1440px) {
+        @content;
+    }
+}

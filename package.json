@@ -1,0 +1,29 @@
+{
+  "name": "artifex",
+  "version": "1.0.0",
+  "description": "",
+  "source": "source/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "engines": {
+    "browsers": "> 0.25%"
+  },
+  "scripts": {
+    "watch": "parcel watch --dist-dir=public",
+    "serve": "parcel serve --dist-dir=public",
+    "build": "parcel build --dist-dir=public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0",
+    "autoprefixer": "^10.3.7",
+    "parcel": "^2.0.0",
+    "postcss-combine-media-query": "^1.0.1"
+  },
+  "dependencies": {
+    "mitt": "^3.0.0",
+    "navigo": "^8.11.1",
+    "umbrellajs": "^3.2.3"
+  }
+}

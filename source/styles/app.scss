@@ -1,0 +1,8 @@
+@import './mixins.scss';
+@import './responsive.scss';
+
+@include tablet() {
+    body {
+        background: red;
+    }
+}
