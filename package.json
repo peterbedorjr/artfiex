@@ -2,24 +2,42 @@
   "name": "artifex",
   "version": "1.0.0",
   "description": "",
-  "source": "source/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "engines": {
     "browsers": "> 0.25%"
   },
   "scripts": {
-    "watch": "parcel watch --dist-dir=public",
-    "serve": "parcel serve --dist-dir=public",
-    "build": "parcel build --dist-dir=public"
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0",
     "autoprefixer": "^10.3.7",
-    "parcel": "^2.0.0",
-    "postcss-combine-media-query": "^1.0.1"
+    "browser-sync": "^2.27.5",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "html-webpack-plugin": "^5.4.0",
+    "image-minimizer-webpack-plugin": "^2.2.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^10.0.0",
+    "laravel-mix": "^6.0.34",
+    "laravel-mix-clean": "^0.1.0",
+    "postcss-combine-media-query": "^1.0.1",
+    "resolve-url-loader": "^4.0.0",
+    "sass-loader": "^12.2.0",
+    "svgo": "^2.7.0"
   },
   "dependencies": {
     "mitt": "^3.0.0",
