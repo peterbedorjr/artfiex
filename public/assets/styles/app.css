@@ -140,13 +140,13 @@ sup {
 }
 
 ::-moz-selection {
-  background: #e74c3c;
+  background: #5789ff;
   color: #fff;
   text-shadow: none;
 }
 
 ::selection {
-  background: #e74c3c;
+  background: #5789ff;
   color: #fff;
   text-shadow: none;
 }
@@ -263,17 +263,17 @@ strike {
 }
 
 a {
-  color: #e74c3c;
+  color: #5789ff;
   text-decoration: none;
 }
 a:focus {
   outline: thin dotted;
 }
 a:hover {
-  color: #d62c1a;
+  color: #2465ff;
 }
 a:active {
-  color: #a82315;
+  color: #0047f0;
 }
 a img {
   border: 0;
@@ -414,48 +414,48 @@ dd {
 .button.-primary {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
   color: #fff;
-  background-color: #e74c3c;
-  border-color: #e74c3c;
+  background-color: #5789ff;
+  border-color: #5789ff;
 }
 .button.-primary:hover {
   color: #fff;
-  background-color: #c44133;
-  border-color: #b93d30;
+  background-color: #4a74d9;
+  border-color: #466ecc;
 }
 .button.-primary:focus {
   color: #fff;
-  border-color: #b93d30;
-  box-shadow: 0 0 0 0.3rem rgba(235, 103, 89, 0.5);
+  border-color: #466ecc;
+  box-shadow: 0 0 0 0.3rem rgba(112, 155, 255, 0.5);
 }
 .button.-primary:not(:disabled):active, .button.-primary:not(:disabled).-is-active {
-  box-shadow: 0 0 0 0.3rem rgba(235, 103, 89, 0.5);
-  background-color: #b93d30;
+  box-shadow: 0 0 0 0.3rem rgba(112, 155, 255, 0.5);
+  background-color: #466ecc;
 }
 .button.-primary:not(:disabled):active:focus, .button.-primary:not(:disabled).-is-active:focus {
-  box-shadow: 0 0 0 0.3rem rgba(235, 103, 89, 0.5);
+  box-shadow: 0 0 0 0.3rem rgba(112, 155, 255, 0.5);
 }
 .button.-secondary {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
   color: #fff;
-  background-color: #3498db;
-  border-color: #3498db;
+  background-color: #121212;
+  border-color: #121212;
 }
 .button.-secondary:hover {
   color: #fff;
-  background-color: #2c81ba;
-  border-color: #2a7aaf;
+  background-color: #0f0f0f;
+  border-color: #0e0e0e;
 }
 .button.-secondary:focus {
   color: #fff;
-  border-color: #2a7aaf;
-  box-shadow: 0 0 0 0.3rem rgba(82, 167, 224, 0.5);
+  border-color: #0e0e0e;
+  box-shadow: 0 0 0 0.3rem rgba(54, 54, 54, 0.5);
 }
 .button.-secondary:not(:disabled):active, .button.-secondary:not(:disabled).-is-active {
-  box-shadow: 0 0 0 0.3rem rgba(82, 167, 224, 0.5);
-  background-color: #2a7aaf;
+  box-shadow: 0 0 0 0.3rem rgba(54, 54, 54, 0.5);
+  background-color: #0e0e0e;
 }
 .button.-secondary:not(:disabled):active:focus, .button.-secondary:not(:disabled).-is-active:focus {
-  box-shadow: 0 0 0 0.3rem rgba(82, 167, 224, 0.5);
+  box-shadow: 0 0 0 0.3rem rgba(54, 54, 54, 0.5);
 }
 .button.-success {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -587,42 +587,18 @@ pre code {
   white-space: pre;
 }
 
-.form {
-  margin-bottom: 4rem;
-}
-
-.fieldset {
-  border: 0;
-  margin-bottom: 4rem;
-}
-
-.legend {
-  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.8rem;
-  font-weight: 1em;
-  border: 0;
-  color: #595959;
-  display: block;
-  margin-bottom: 1.4rem;
-}
-
-.label {
-  display: block;
-  font-weight: normal;
-  line-height: 1.3em;
-  margin-bottom: 0.4rem;
-  margin-right: 1rem;
-}
-
-.input,
-.select,
-.textarea {
+.input {
   font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1.6rem;
   font-weight: normal;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   background-clip: border-box;
   border-radius: 3px;
-  background-clip: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  background-clip: padding-box;
   background-color: #fff;
   border: 1px solid #e6e6e6;
   color: #595959;
@@ -633,128 +609,16 @@ pre code {
   padding: 1rem 1.6rem;
   width: 100%;
 }
-.input:hover,
-.select:hover,
-.textarea:hover {
-  border-color: #cccccc;
-}
-.input:focus,
-.select:focus,
-.textarea:focus {
-  border-color: #b3b3b3;
-}
-.input:focus:required:invalid,
-.select:focus:required:invalid,
-.textarea:focus:required:invalid {
-  background-color: #fff;
-  border-color: #a41818;
-  color: #781111;
-}
-.input:invalid,
-.select:invalid,
-.textarea:invalid {
-  background-color: #fff;
-  border: 1px solid #a41818;
-  color: #781111;
-}
-.input:invalid:hover,
-.select:invalid:hover,
-.textarea:invalid:hover {
-  border-color: #781111;
-}
-.input:invalid:focus,
-.select:invalid:focus,
-.textarea:invalid:focus {
-  border-color: #4b0b0b;
-}
-.input:required,
-.select:required,
-.textarea:required {
-  background-color: #fff;
-  border: 1px solid #737373;
-  color: #595959;
-}
-.input:required:hover,
-.select:required:hover,
-.textarea:required:hover {
-  border-color: #595959;
-}
-.input:required:focus,
-.select:required:focus,
-.textarea:required:focus {
-  border-color: #404040;
-}
-
-.input::-webkit-input-placeholder {
-  color: #bfbfbf;
-  color: #bfbfbf;
-}
-
-.input:-moz-placeholder {
-  color: #bfbfbf;
-  color: #bfbfbf;
-}
-
-.input::-moz-placeholder {
-  color: #bfbfbf;
-  color: #bfbfbf;
-}
-
-.input:-ms-input-placeholder {
-  color: #bfbfbf;
-  color: #bfbfbf;
-}
-
-.input.-search {
-  -webkit-appearance: textfield;
-}
-.input.-search::-webkit-search-decoration, .input.-search::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  display: none;
-}
-.input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-.input[disabled], .input.-disabled {
-  border: none;
-  background-color: whitesmoke;
-  color: #737373;
-  cursor: not-allowed;
-}
-
-.checkbox,
-.radio {
-  margin-bottom: 1rem;
-  margin-right: 0.5rem;
-  padding: 0;
-}
-
-.reset,
-.submit {
-  -webkit-appearance: button;
-  cursor: pointer;
-}
-
-.select {
-  cursor: pointer;
-  padding-right: 1rem;
-}
-.select[multiple] {
-  min-height: 8rem;
-  vertical-align: top;
-}
-.select[multiple]:after {
-  content: " ";
-}
-
-.textarea {
+.input[type=file] {
   overflow: hidden;
-  resize: vertical;
-  line-height: 1.3em;
-  min-height: 8rem;
-  padding: 1rem 1.6rem;
-  vertical-align: top;
+}
+.input[type=file]:not(:disabled):not([readonly]) {
+  cursor: pointer;
+}
+.input:focus {
+  border-color: #5789ff;
+  outline: 0;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 0 0.3rem rgba(115, 115, 115, 0.5);
 }
 
 .container {
@@ -864,6 +728,9 @@ pre code {
 }
 @media (prefers-reduced-motion: reduce){
   .button {
+    transition: none;
+  }
+  .input {
     transition: none;
   }
 }

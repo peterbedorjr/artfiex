@@ -37,17 +37,12 @@ $enableReducedMotion: true !default;
 /// @group colors
 /// @type Color
 /// @access public
-$primary: #e74c3c !default;
+$primary: #5789ff !default;
 
 /// @group colors
 /// @type Color
 /// @access public
-$secondary: #3498db !default;
-
-/// @group colors
-/// @type Color
-/// @access public
-$tertiary: #1abc9c !default;
+$secondary: #121212 !default;
 
 /// @group colors
 /// @type Color
@@ -225,6 +220,12 @@ $componentActiveColor: $white !default;
 /// @type Color
 /// @access public
 $componentActiveBackground: $primary !default;
+
+/// Box shadow inset
+/// @group base
+/// @type String
+/// @access public
+$boxShadowInset: inset 0 1px 2px rgba($black, .075) !default;
 
 /// Default transition
 /// @group typography
@@ -1213,7 +1214,7 @@ $inputBorderColorHover: darken($inputBorderColor, 10%) !default;
 /// @group forms
 /// @type Color
 /// @access public
-$inputBorderColorFocus: darken($inputBorderColor, 20%) !default;
+$inputBorderColorFocus: $primary !default;
 
 /// Input border width
 /// @group forms
@@ -1370,6 +1371,24 @@ $inputDisabledModifier: -disabled !default;
 /// @type String
 /// @access public
 $inputDisabledCursor: not-allowed !default;
+
+/// Input focus box shadow
+/// @group forms
+/// @type String
+/// @access public
+$inputFocusBoxShadow: $buttonFocusBoxShadow !default;
+
+/// Input box shadow
+/// @group forms
+/// @type String
+/// @access public
+$inputBoxShadow: $boxShadowInset !default;
+
+/// Input transition
+/// @group forms
+/// @type String
+/// @access public
+$inputTransition: border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
 /// Multi select minimum height
 /// @group forms
