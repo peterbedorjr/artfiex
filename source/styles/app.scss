@@ -1,8 +1,15 @@
-@import './mixins.scss';
-@import './responsive.scss';
+@import './variables';
+@import './mixins';
+@import './responsive';
+@import '../core/styles/reset';
+@import '../core/styles/components/buttons';
+@import '../core/styles/components/code';
+@import '../core/styles/components/forms';
+@import '../core/styles/components/helpers';
+@import '../core/styles/components/tables';
 
 @include tablet() {
     body {
-        background: red;
+        z-index: 10;
     }
 }

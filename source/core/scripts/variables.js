@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 import { isBrowser } from './core';
 
 const D = isBrowser ? window.document : {};

@@ -1,9 +1,9 @@
-import mitt from 'mitt'
+import mitt from 'mitt';
 import assets from '../core/scripts/assets';
 import createRouteHandler from '../core/scripts/createRouteHandler';
 
-export default createRouteHandler(async (route) => {
-    emitter = mitt();
+export default createRouteHandler(async () => {
+    const emitter = mitt();
 
     emitter.on('test', () => {
         console.log('test 2');

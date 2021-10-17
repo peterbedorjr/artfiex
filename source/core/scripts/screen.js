@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 import { $exec } from './core';
 import { $toArray } from './types';
 import { _win, _html } from './variables';

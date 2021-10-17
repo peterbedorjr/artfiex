@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 import { $toArray, _extend } from './types';
 
 export const isBrowser = typeof window === 'object';
@@ -12,10 +14,10 @@ export const isBrowser = typeof window === 'object';
  * @returns {*} [response]
  */
 export function $exec(fn, options = {}) {
-    let fns = $toArray(fn),
-        len = fns.length,
-        i = 0,
-        response;
+    const fns = $toArray(fn);
+    const len = fns.length;
+    let i = 0;
+    let response;
 
     for (; i < len; i++) {
         const conf = _extend({

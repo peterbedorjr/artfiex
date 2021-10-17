@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 import { $isObject, $serialize, $unserialize } from './types';
 import { _doc, _win } from './variables';
 

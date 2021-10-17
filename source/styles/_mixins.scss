@@ -1,3 +1,5 @@
+@import '../core/styles/mixins';
+
 @mixin mobileLandscape() {
     @media (min-width: 480px) {
         @content;

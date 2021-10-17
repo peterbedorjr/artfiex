@@ -1,0 +1,72 @@
+@if $buttonStyled {
+    .button {
+        @include font($buttonFont, $buttonFontSize, $buttonFontWeight);
+
+        @if $buttonTransitionEnabled {
+            @include transition($buttonTransition);
+        }
+
+        border-radius: if($buttonRounded, $buttonRounded, null);
+        border: $buttonBorderWidth solid transparent;
+        color: $buttonColor;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 1em;
+        margin-bottom: if($buttonMarginBottom, $buttonMarginBottom, null);
+        margin: 0;
+        padding: $buttonPaddingVertical $buttonPaddingHorizontal;
+        text-align: center;
+        user-select: none;
+        vertical-align: middle;
+        white-space: $buttonWhitespace;
+
+        &:focus {
+            outline: 0;
+        }
+
+        &::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+
+        @if $enableShadows {
+            &:not(:disabled) {
+                &:active,
+                &.-is-active {
+                    @include boxShadow($buttonActiveBoxShadow);
+
+                    &:focus {
+                        @include boxShadow($buttonFocusBoxShadow, $buttonActiveBoxShadow);
+                    }
+                }
+            }
+        }
+    }
+
+    .button {
+        border: if($buttonBorderColor, 1px solid $buttonBorderColor, null);
+
+        background-color: $buttonBackground;
+        color: $buttonColor;
+
+        &:focus {
+            box-shadow: $buttonFocusBoxShadow;
+        }
+
+        &:hover {
+            background-color: $buttonBackgroundHover;
+            color: $buttonColor;
+        }
+
+        &:active {
+            background-color: $buttonBackgroundActive;
+            color: $buttonColor;
+        }
+
+        @each $color, $value in $themeColors {
+            &.-#{$color} {
+                @include buttonVariant($value, $value);
+            }
+        }
+    }
+}

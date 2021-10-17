@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const _slice = [].slice;
 
 /**
@@ -6,21 +8,39 @@ export const _slice = [].slice;
  * @protected
  * @param {*} val
  */
- export function _castString(val) {
+export function _castString(val) {
     if (typeof val === 'string') {
         try {
-            val = val === 'true' ? true :
-                val === 'false' ? false :
-                    val === 'null' ? null :
-                        parseInt(val).toString() === val ? parseInt(val) :
-                            /^(?:\{[\w\W]*}|\[[\w\W]*])$/.test(val) ? JSON.parse(val) :
-                                val;
+            val = val === 'true' ? true
+                : val === 'false' ? false
+                    : val === 'null' ? null
+                        : parseInt(val).toString() === val ? parseInt(val)
+                            : /^(?:\{[\w\W]*}|\[[\w\W]*])$/.test(val) ? JSON.parse(val)
+                                : val;
         } catch (e) {}
     }
 
     return val;
 }
 
+/**
+ * Clone value to a new instance
+ *
+ * @private
+ * @param {*} val
+ * @returns {*}
+ */
+ function _copy(val) {
+    const type = $type(val);
+
+    if (type == 'object') {
+        val = _extend({}, val, true);
+    } else if (type == 'array') {
+        val = val.slice(0);
+    }
+
+    return val;
+}
 
 /**
  * Extend target object with source object(s)
@@ -38,13 +58,13 @@ export function _extend(target, object, deep, _set = []) {
     }
 
     for (const key in object) {
-        let src = object[key],
-            type = $type(src);
+        const src = object[key];
+        const type = $type(src);
 
         if (deep && type == 'object') {
-            let len = _set.length,
-                i = 0,
-                val;
+            const len = _set.length;
+            let i = 0;
+            let val;
 
             for (; i < len; i++) {
                 if (_set[i] === src) {
@@ -68,6 +88,77 @@ export function _extend(target, object, deep, _set = []) {
 }
 
 /**
+ * Compare two values for equality
+ *
+ * @private
+ * @param {*} a
+ * @param {*} b
+ * @returns {boolean}
+ */
+ function _equals(a, b) {
+    if (a === b) {
+        return true;
+    }
+
+    const aType = $type(a);
+
+    if (aType != $type(b)) {
+        return false;
+    }
+
+    if (aType == 'array') {
+        return _arrEquals(a, b);
+    }
+
+    if (aType == 'object') {
+        return _objEquals(a, b);
+    }
+
+    if (aType == 'date') {
+        return +a == +b;
+    }
+
+    return false;
+}
+
+/**
+ * Compare two objects for equality
+ *
+ * @private
+ * @param {Object} a
+ * @param {Object} b
+ * @returns {boolean}
+ */
+ function _objEquals(a, b) {
+    const aKeys = Object.keys(a);
+
+    return _arrEquals(aKeys.sort(), Object.keys(b).sort()) &&
+        aKeys.every(i => _equals(a[i], b[i]));
+}
+
+/**
+ * Clone value to a new instance
+ *
+ * @private
+ * @param {*} val
+ * @returns {*}
+ */
+ export function $copy(val) {
+    return _copy(val);
+}
+
+/**
+ * Compare two values for strict equality
+ *
+ * @param {*} a
+ * @param {*} b
+ * @returns {boolean}
+ */
+ export function $equals(a, b) {
+    return _equals(a, b);
+}
+
+/**
  * Extend target object with source object(s)
  *
  * @param {(boolean|Object)} deep - extend nested properties else target object
@@ -75,10 +166,10 @@ export function _extend(target, object, deep, _set = []) {
  * @param {...Object} [obj] - merged objects
  * @returns {Object}
  */
- export function $extend(deep) {
-    let bool = typeof deep === 'boolean',
-        args = _slice.call(arguments).slice(bool ? 1 : 0),
-        target = args[0] || {};
+export function $extend(deep) {
+    const bool = typeof deep === 'boolean';
+    const args = _slice.call(arguments).slice(bool ? 1 : 0);
+    let target = args[0] || {};
     deep = bool ? deep : false;
 
     args.slice(1).forEach((source) => {
@@ -95,10 +186,10 @@ export function _extend(target, object, deep, _set = []) {
  * @returns string
  */
 export function $type(obj) {
-    return obj === undefined ? 'undefined' :
-        Object.prototype.toString.call(obj)
-        .replace(/^\[object (.+)]$/, '$1')
-        .toLowerCase();
+    return obj === undefined ? 'undefined'
+        : Object.prototype.toString.call(obj)
+            .replace(/^\[object (.+)]$/, '$1')
+            .toLowerCase();
 }
 
 /**
@@ -107,7 +198,7 @@ export function $type(obj) {
  * @param {*} obj
  * @returns {boolean}
  */
- export function $isObject(obj) {
+export function $isObject(obj) {
     return $type(obj) === 'object';
 }
 
@@ -117,7 +208,7 @@ export function $type(obj) {
  * @param {*} obj
  * @returns {boolean}
  */
- export function $isString(obj) {
+export function $isString(obj) {
     return typeof obj === 'string';
 }
 
@@ -137,7 +228,7 @@ export function $toArray(val) {
  * @param {Object} obj
  * @returns {string} value
  */
- export function $serialize(obj) {
+export function $serialize(obj) {
     const arr = [];
 
     Object.keys(obj || {}).forEach((key) => {
@@ -162,16 +253,16 @@ export function $toArray(val) {
  * @param {string} str
  * @returns {Object} value
  */
- export function $unserialize(str) {
+export function $unserialize(str) {
     const obj = {};
 
     decodeURIComponent(str)
         .replace(/^\?/, '')
         .split('&').forEach((el) => {
-            let split = el.split('='),
-                key = split[0].replace('[]', ''),
-                val = (split[1] || '').replace(/\+/g, ' ') || '',
-                isArrayProp = /\[\]/.test(split[0]);
+            const split = el.split('=');
+            const key = split[0].replace('[]', '');
+            const val = (split[1] || '').replace(/\+/g, ' ') || '';
+            const isArrayProp = /\[\]/.test(split[0]);
 
             if (obj.hasOwnProperty(key)) {
                 obj[key] = $toArray(obj[key]);

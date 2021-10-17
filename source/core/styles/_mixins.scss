@@ -1,0 +1,208 @@
+@import 'functions';
+
+///
+/// @group typography
+/// @param {*} $family [$baseFont] - Font family
+/// @param {Number|null} $size [null]
+/// @param {Number|null} $weight [null]
+/// @param {Number|null} $lineHeight [null]
+/// @param {String|null} $style [null]
+/// @param {Number|null} $spacing [null]
+@mixin font($family: $baseFont, $size: null, $weight: null, $lineHeight: null, $style: null, $spacing: null) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lineHeight;
+    font-style: $style;
+    letter-spacing: $spacing;
+}
+
+/// Heading
+/// @param {*} $fontSize [null]
+@mixin heading($fontSize: null) {
+    @include font($headingFont, $fontSize, $headingFontWeight, $headingLineHeight);
+
+    color: $headingColor;
+    margin-bottom: $headingMarginBottom;
+    small {
+        font-weight: normal;
+    }
+}
+
+///
+/// @param {*} $transition...
+@mixin transition($transition...) {
+    @if length($transition) == 0 {
+        $transition: $baseTransition;
+    }
+
+    @if length($transition) > 1 {
+        @each $value in $transition {
+            @if $value == null or $value == none {
+                @warn "The keyword 'none' or 'null' must be used as a single argument.";
+            }
+        }
+    }
+
+    @if $transitionEnabled {
+        @if nth($transition, 1) != null {
+            transition: $transition;
+        }
+
+        @if $enableReducedMotion and nth($transition, 1) != null and nth($transition, 1) != none {
+            @media (prefers-reduced-motion: reduce) {
+                transition: none;
+            }
+        }
+    }
+}
+
+///
+/// @param {String} $shadow...
+@mixin boxShadow($shadow...) {
+    @if $enableShadows {
+        $result: ();
+
+        @each $value in $shadow {
+            @if $value != null {
+                $result: append($result, $value, "comma");
+            }
+            @if $value == none and length($shadow) > 1 {
+                @warn "The keyword 'none' must be used as a single argument.";
+            }
+        }
+
+        @if (length($result) > 0) {
+            box-shadow: $result;
+        }
+    }
+}
+
+// Border radius
+//
+// @param $keyword - top, right, bottom, left
+// @param $radius - value defines how rounded el's corners are
+//
+@mixin rounded($keyword: '', $value: $defaultRadius) {
+    $corners: false;
+
+    @if ($keyword != false) {
+        background-clip: border-box;
+
+        @if ($keyword == left or $keyword == right) {
+            $corners: border-top-#{$keyword}-radius,
+                border-bottom-#{$keyword}-radius;
+        } @else if ($keyword == top or $keyword == bottom) {
+            $corners: border-#{$keyword}-left-radius,
+                border-#{$keyword}-right-radius;
+        }
+
+        @if ($corners != false) {
+            @each $corner in $corners {
+                #{$corner}: $value;
+            }
+        } @else {
+            @if (type-of($keyword) == number) {
+                $value: $keyword;
+            }
+
+            @if (unit($value) == '') {
+                $value: $value + rem;
+            }
+
+            border-radius: $value;
+        }
+    }
+}
+
+/// Styles form placeholder text
+/// @param {Color} $color [$inputPlaceholderColor]
+@mixin placeholder($color: $inputPlaceholderColor) {
+    @include optionalAtRoot('::-webkit-input-placeholder') {
+        color: $color;
+        @content;
+    }
+
+    @include optionalAtRoot(':-moz-placeholder') {
+        color: $color;
+        @content;
+    }
+
+    @include optionalAtRoot('::-moz-placeholder') {
+        color: $color;
+        @content;
+    }
+
+    @include optionalAtRoot(':-ms-input-placeholder') {
+        color: $color;
+        @content;
+    }
+}
+
+/// Sets overflow to hidden and resize to both
+/// @param {String} $value [both] - el is resizable if so, which direction
+@mixin resizable($value: both) {
+    overflow: hidden;
+    resize: $value;
+}
+
+@mixin buttonVariant(
+    $background,
+    $border,
+    $color: colorContrast($background),
+    $hoverBackground: if($color == $colorContrastLight, shadeColor($background, $buttonHoverBackgroundShadeAmount), tintColor($background, $buttonHoverBackgroundTintAmount)),
+    $hoverBorder: if($color == $colorContrastLight, shadeColor($border, $buttonHoverBorderShadeAmount), tintColor($border, $buttonHoverBorderTintAmount)),
+    $hoverColor: colorContrast($hoverBackground),
+    $activeBackground: if($color == $colorContrastLight, shadeColor($background, $buttonActiveBackgroundShadeAmount), tintColor($background, $buttonActiveBackgroundTintAmount)),
+    $activeBorder: if($color == $colorContrastLight, shadeColor($border, $buttonActiveBorderShadeAmount), tintColor($border, $buttonActiveBorderTintAmount)),
+    $activeColor: colorContrast($activeBackground),
+    $disabledBackground: $background,
+    $disabledBorder: $border,
+    $disabledColor: colorContrast($disabledBackground)
+) {
+    @include boxShadow($buttonBoxShadow);
+
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+
+    &:hover {
+        color: $hoverColor;
+        background-color: $hoverBackground;
+        border-color: $hoverBorder;
+    }
+
+    &:focus {
+        color: $hoverColor;
+        border-color: $hoverBorder;
+
+        @if $enableShadows {
+            @include boxShadow(0 0 0 $buttonFocusWidth rgba(mix($color, $border, 15%), .5));
+        } @else {
+            box-shadow: 0 0 0 $buttonFocusWidth rgba(mix($color, $border, 15%), .5);
+        }
+    }
+
+    @if $enableShadows {
+        &:not(:disabled) {
+            &:active,
+            &.-is-active {
+                @include boxShadow(0 0 0 $buttonFocusWidth rgba(mix($color, $border, 15%), .5));
+
+                background-color: shadeColor($background, 20%);
+
+                &:focus {
+                    @include boxShadow(0 0 0 $buttonFocusWidth rgba(mix($color, $border, 15%), .5));
+                }
+            }
+        }
+    }
+}
+
+///
+/// @param {Selector} $sel
+@mixin optionalAtRoot($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}

@@ -1,0 +1,1469 @@
+/// Enable or disable table styles
+/// @group global
+/// @type Boolean
+/// @access public
+$tableStyled: true !default;
+
+/// Enable or disable table border
+/// @group global
+/// @type Boolean
+/// @access public
+$tableBordered: false !default;
+
+/// Enable or disable table stripes
+/// @group global
+/// @type Boolean
+/// @access public
+$tableStriped: true !default;
+
+/// Enable or disable global transition
+/// @group global
+/// @type Boolean
+/// @access public
+$transitionEnabled: true !default;
+
+/// Enable bumperPadding on containers
+/// @group global
+/// @type Boolean
+/// @access public
+$padContainer: true !default;
+
+/// Enable or disable enable reduce motion
+/// @group global
+/// @type Boolean
+/// @access public
+$enableReducedMotion: true !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$primary: #e74c3c !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$secondary: #3498db !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$tertiary: #1abc9c !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$info: #3498db !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$success: #2ecc71 !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$warning: #f1c40f !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$danger: #e74c3c !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$white: #fff !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$lightestGray: darken(#fff, 4%) !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$lighterGray: darken(#fff, 10%) !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$lightGray: darken(#fff, 25%) !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$gray: darken(#fff, 35%) !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$darkGray: darken(#fff, 55%) !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$darkerGray: darken(#fff, 65%) !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$darkestGray: darken(#fff, 75%) !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$black: #000 !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$colorContrastDark: $black !default;
+
+/// @group colors
+/// @type Color
+/// @access public
+$colorContrastLight: $white !default;
+
+/// @group colors
+/// @type Number
+/// @access public
+$minContrastRatio: 2.5 !default;
+
+/// @group colors
+/// @type Map
+/// @access public
+$themeColors: (
+    primary: $primary,
+    secondary: $secondary,
+    success: $success,
+    info: $info,
+    warning: $warning,
+    danger: $danger,
+);
+
+/// Min width for container
+/// @group layout
+/// @type Number|Bool
+/// @access public
+$minWidth: false !default;
+
+/// Bumper padding on containers, false to disable
+/// @group layout
+/// @type Number|Bool
+/// @access public
+$bumperPadding: 6% !default;
+
+/// Max width for container
+/// @group layout
+/// @type Number|Bool
+/// @access public
+$maxWidth: 1280px !default;
+
+/// Default spacing for lists, form elements, and other blocks
+/// @group layout
+/// @type Number
+/// @access public
+$blockMarginBottom: 4rem !default;
+
+/// Root font size (62.5% = 10px, 100% = 16px)
+/// All rem-based units are relative to the root size set here
+/// @group base
+/// @type Number
+/// @access public
+$rootFontSize: 62.5% !default;
+
+/// Body background
+/// @group base
+/// @type Color|Bool
+/// @access public
+$bodyBackground: $white !default; // false to disable
+
+/// Base font stack
+/// @group base
+/// @type String
+/// @access public
+$baseFont: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+/// Base font size
+/// @group base
+/// @type Number
+/// @access public
+$baseFontSize: 1.6rem !default;
+
+/// Base font weightt
+/// @group base
+/// @type String
+/// @access public
+$baseFontWeight: normal !default;
+
+/// Base line height
+/// @group base
+/// @type Number
+/// @access public
+$baseLineHeight: 1em !default;
+
+/// Base font color
+/// @group base
+/// @type Color
+/// @access public
+$baseColor: $darkestGray !default;
+
+/// Globally enable or disable shadows
+/// @group base
+/// @type Boolean
+/// @access public
+$enableShadows: true !default;
+
+/// Component active color
+/// @group base
+/// @type Color
+/// @access public
+$componentActiveColor: $white !default;
+
+/// Component active background color
+/// @group base
+/// @type Color
+/// @access public
+$componentActiveBackground: $primary !default;
+
+/// Default transition
+/// @group typography
+/// @type String
+/// @access public
+$baseTransition: all .2s ease-in-out !default;
+
+/// Bold font weight
+/// @group typography
+/// @type String
+/// @access public
+$boldFontWeight: bold !default;
+
+/// Normal font weight
+/// @group typography
+/// @type String
+/// @access public
+$normalFontWeight: normal !default;
+
+/// Paragraph line height
+/// @group typography
+/// @type Number
+/// @access public
+$paragraphLineHeight: 1.7em !default;
+
+/// Paragraph color
+/// @group typography
+/// @type Color
+/// @access public
+$paragraphColor: $baseColor !default;
+
+/// Paragraph font weight
+/// @group typography
+/// @type String
+/// @access public
+$paragraphFontWeight: $baseFontWeight !default;
+
+/// Paragraph line height
+/// @group typography
+/// @type Number
+/// @access public
+$paragraphMarginBottom: 2rem !default;
+
+/// Link color
+/// @group links
+/// @type Color
+/// @access public
+$linkColor: $primary !default;
+
+/// Link hover color
+/// @group links
+/// @type Color
+/// @access public
+$linkColorHover: darken($linkColor, 10%) !default;
+
+/// Link active color
+/// @group links
+/// @type Color
+/// @access public
+$linkColorActive: darken($linkColor, 20%) !default;
+
+/// Link decoration
+/// @group links
+/// @type String [none, underline]
+/// @access public
+$linkDecoration: none !default;
+
+/// Link hover decoration
+/// @group links
+/// @type String [none, underline, false]
+/// @access public
+$linkDecorationHover: false !default; // none, underline, false
+
+/// Default border radius
+/// @group misc
+/// @type Number
+/// @access public
+$defaultRadius: 3px !default;
+
+/// Default opacity
+/// @group misc
+/// @type Number
+/// @access public
+$defaultOpacity: .2 !default;
+
+/// Default transititon timing duration
+/// @group misc
+/// @type Number
+/// @access public
+$defaultDuration: .2s !default;
+
+/// Default transittion ttiming
+/// @group misc
+/// @type Number
+/// @access public
+$defaultTiming: ease-in-out !default;
+
+/// Abbr underline
+/// @group misc
+/// @type String [dotted, solid, none]
+/// @access public
+$abbrUnderline: dotted !default;
+
+/// Mark color
+/// @group misc
+/// @type Color
+/// @access public
+$markColor: $baseColor !default;
+
+/// Mark background
+/// @group misc
+/// @type Color
+/// @access public
+$markBackground: yellow !default;
+
+/// Selection color
+/// @group misc
+/// @type Color
+/// @access public
+$selectionColor: $white !default;
+
+/// Selection background color
+/// @group misc
+/// @type Color
+/// @access public
+$selectionBackground: $linkColor !default;
+
+/// Figure border color
+/// @group images
+/// @type Color|Bool
+/// @access public
+$figureBorderColor: false !default;
+
+/// Whether figures are rounded
+/// @group images
+/// @type Bool
+/// @access public
+$figureRounded: false !default;
+
+/// Figure paddingg
+/// @group images
+/// @type Number
+/// @access public
+$figurePadding: $blockMarginBottom !default;
+
+/// Figure caption color
+/// @group images
+/// @type Color
+/// @access public
+$figCaptionColor: $darkGray !default;
+
+/// Figure caption font style
+/// @group images
+/// @type String
+/// @access public
+$figCaptionFontStyle: italic !default;
+
+/// Figure caption line height
+/// @group images
+/// @type Number
+/// @access public
+$figCaptionLineHeight: $paragraphLineHeight !default;
+
+/// Image float left class name
+/// @group images
+/// @type String
+/// @access public
+$imageLeftClass: img-left !default;
+
+/// Image float right class name
+/// @group images
+/// @type String
+/// @access public
+$imageRightClass: img-right !default;
+
+/// Margin applied when using img-left and img-right classes
+/// @group images
+/// @type Number
+/// @access public
+$imageMarginBottom: 2rem !default;
+
+/// Margin applied when using img-left and img-right classes
+/// @group images
+/// @type Number
+/// @access public
+$imageMarginSide: 2rem !default;
+
+/// Heading color
+/// @group typography.headings
+/// @type Number
+/// @access public
+$headingColor: inherit !default;
+
+/// Heading font stack
+/// @group typography.headings
+/// @type List
+/// @access public
+$headingFont: Tahoma, Geneva, sans-serif !default;
+
+/// Heading font weight
+/// @group typography.headings
+/// @type String
+/// @access public
+$headingFontWeight: $boldFontWeight !default;
+
+/// Heading line heiight
+/// @group typography.headings
+/// @type Number
+/// @access public
+$headingLineHeight: 1.4em !default;
+
+/// Heading margin bottom
+/// @group typography.headings
+/// @type Number
+/// @access public
+$headingMarginBottom: 2rem !default;
+
+/// Heading level 1 font size
+/// @group typography.headings
+/// @type Number
+/// @access public
+$h1: 3.6rem !default;
+
+/// Heading level 2 font size
+/// @group typography.headings
+/// @type Number
+/// @access public
+$h2: 3.2rem !default;
+
+/// Heading level 3 font size
+/// @group typography.headings
+/// @type Number
+/// @access public
+$h3: 2.8rem !default;
+
+/// Heading level 4 font size
+/// @group typography.headings
+/// @type Number
+/// @access public
+$h4: 2.4rem !default;
+
+/// Heading level 5 font size
+/// @group typography.headings
+/// @type Number
+/// @access publict;
+$h5: 2rem !default;
+
+/// Heading level 6 font size
+/// @group typography.headings
+/// @type Number
+/// @access public
+$h6: 1.6rem !default;
+
+/// @group typography.misc
+/// @type Number
+/// @access public
+$smallFontSize: .8em !default;
+
+/// Cite color
+/// @group typography.cite
+/// @type Color
+/// @access public
+$citeColor: $gray !default;
+
+/// Cite font
+/// @group typography.cite
+/// @type List
+/// @access public
+$citeFont: $baseFont !default;
+
+/// Cite font size
+/// @group typography.cite
+/// @type Number
+/// @access public
+$citeFontSize: 1.8rem !default;
+
+/// Cite style
+/// @group typography.cite
+/// @type String
+/// @access public
+$citeFontStyle: normal !default;
+
+/// Cite font weight
+/// @group typography.cite
+/// @type String
+/// @access public
+$citeFontWeight: normal !default;
+
+/// Cite line height
+/// @group typography.cite
+/// @type Number
+/// @access public
+$citeLineHeight: 1.2em !default;
+
+/// Cite margin top
+/// @group typography.cite
+/// @type Number
+/// @access public
+$citeMarginTop: 1.4rem !default;
+
+/// Cite indicator
+/// @group typography.cite
+/// @type String
+/// @access public
+$citeIndicator: '\2014\00a0' !default;
+
+/// Quote color
+/// @group typography.quote
+/// @type Color
+/// @access public
+$quoteColor: $darkestGray !default;
+
+/// Quote font
+/// @group typography.quote
+/// @type List
+/// @access public
+$quoteFont: Georgia, Times, serif !default;
+
+/// Quote font size
+/// @group typography.quote
+/// @type Number
+/// @access public
+$quoteFontSize: 2rem !default;
+
+/// Quote string
+/// @group typography.quote
+/// @type String
+/// @access public
+$quoteFontStyle: italic !default;
+
+/// Quote string
+/// @group typography.quote
+/// @type String
+/// @access public
+$quoteFontWeight: normal !default;
+
+/// Quote line heightt
+/// @group typography.quote
+/// @type Number
+/// @access public
+$quoteLineHeight: 1.4em !default;
+
+/// Quote horizontal padding
+/// @group typography.quote
+/// @type Number
+/// @access public
+$quotePaddingHorizontal: 2em !default;
+
+/// Quote vertitcal padding
+/// @group typography.quote
+/// @type Number
+/// @access public
+$quotePaddingVertical: 1em !default;
+
+/// Horizontal rule color
+/// @group misc
+/// @type Color
+/// @access public
+$ruleColor: $lightGray !default;
+
+/// Horizontal height
+/// @group misc
+/// @type Number
+/// @access public
+$ruleHeight: 1px !default;
+
+/// Horizontal rule style
+/// @group misc
+/// @type String
+/// @access public
+$ruleStyle: solid !default;
+
+/// Horizontal rule margin
+/// @group misc
+/// @type Number
+/// @access public
+$ruleMargin: $blockMarginBottom !default;
+
+/// Address color
+/// @group address
+/// @type Color
+/// @access public
+$addressColor: $darkestGray !default;
+
+/// Address fontt
+/// @group address
+/// @type List
+/// @access public
+$addressFont: $baseFont !default;
+
+/// Address font size
+/// @group address
+/// @type Number
+/// @access public
+$addressFontSize: $baseFontSize !default;
+
+/// Address font weight
+/// @group address
+/// @type String
+/// @access public
+$addressFontWeight: normal !default;
+
+/// Address font style
+/// @group address
+/// @type String
+/// @access public
+$addressFontStyle: normal !default;
+
+/// Address line heightt
+/// @group address
+/// @type Number
+/// @access public
+$addressLineHeight: $paragraphLineHeight !default;
+
+/// List color
+/// @group list
+/// @type Color
+/// @access public
+$listColor: $paragraphColor !default;
+
+/// List line height
+/// @group list
+/// @type Number
+/// @access public
+$listLineHeight: $paragraphLineHeight !default;
+
+/// List margin bottom
+/// @group list
+/// @type Number
+/// @access public
+$listMarginBottom: $paragraphMarginBottom !default;
+
+/// List margin left
+/// @group list
+/// @type Number|Boolean
+/// @access public
+$listMarginLeft: false !default;
+
+/// List bullet style
+/// @group list
+/// @type String
+/// @access public
+$listBulletStyle: disc !default;
+
+/// List bullet position
+/// @group list
+/// @type String [inside, outside]
+/// @access public
+$listBulletPosition: inside !default;
+
+/// Nested list margin left
+/// @group list
+/// @type Number
+/// @access public
+$nestedListMarginLeft: 2rem !default;
+
+/// List item margin bottom
+/// @group list
+/// @type Number
+/// @access public
+$liMarginBottom: .2rem !default; // false to disable
+
+/// Description list margin bottom
+/// @group list
+/// @type Number
+/// @access public
+$dlMarginBottom: $blockMarginBottom !default;
+
+/// Description list title color
+/// @group list
+/// @type Color
+/// @access public
+$dtColor: $darkerGray !default;
+
+/// Description list title font
+/// @group list
+/// @type List
+/// @access public
+$dtFont: $headingFont !default;
+
+/// Description list title font size
+/// @group list
+/// @type Number
+/// @access public
+$dtFontSize: 2rem !default;
+
+/// Description list title margin bottom
+/// @group list
+/// @type Number
+/// @access public
+$dtMarginBottom: .2rem !default;
+
+/// Description list item color
+/// @group list
+/// @type Number
+/// @access public
+$ddColor: $gray !default;
+
+/// Description list item font
+/// @group list
+/// @type List
+/// @access public
+$ddFont: $baseFont !default;
+
+/// Description list font size
+/// @group list
+/// @type Number
+/// @access public
+$ddFontSize: $baseFontSize !default;
+
+/// Description list item margin bottom
+/// @group list
+/// @type Number
+/// @access public
+$ddMarginBottom: 1rem !default;
+
+/// Whether buttons will be styled
+/// @group buttons
+/// @type Boolean
+/// @access public
+$buttonStyled: true !default;
+
+/// Buttton transition
+/// @group buttons
+/// @type List
+/// @access public
+$buttonTransition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+/// Buttton font
+/// @group buttons
+/// @type List
+/// @access public
+$buttonFont: $baseFont !default;
+
+/// Buttton font size
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonFontSize: $baseFontSize !default;
+
+/// Buttton font weight
+/// @group buttons
+/// @type String
+/// @access public
+$buttonFontWeight: normal !default;
+
+/// Buttton color
+/// @group buttons
+/// @type Color
+/// @access public
+$buttonColor: $white !default;
+
+/// Buttton whitespace
+/// @group buttons
+/// @type Number|Null
+/// @access public
+$buttonWhitespace: null !default;
+
+/// Buttton border width
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonBorderWidth: 1px;
+
+/// Buttton padding horizontal
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonPaddingHorizontal: 3rem !default;
+
+/// Buttton padding vertical
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonPaddingVertical: 1.3rem !default;
+
+/// Buttton padding bottom
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonMarginBottom: false !default;
+
+/// Button border radius
+/// @group buttons
+/// @type Number|Boolean
+/// @access public
+$buttonRounded: $defaultRadius !default;
+
+/// Whether the button transitions are enabled
+/// @group buttons
+/// @type Boolean
+/// @access public
+$buttonTransitionEnabled: true !default;
+
+/// Button background
+/// @group buttons
+/// @type Color
+/// @access public
+$buttonBackground: $darkGray !default;
+
+/// Button hover background
+/// @group buttons
+/// @type Color
+/// @access public
+$buttonBackgroundHover: darken($buttonBackground, 5%) !default;
+
+/// Buttton acttive bacckground
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonBackgroundActive: darken($buttonBackground, 10%) !default;
+
+/// Button border color
+/// @group buttons
+/// @type Color|Boolean
+/// @access public
+$buttonBorderColor: false !default;
+
+/// Disabled buttono class modifier
+/// @group buttons
+/// @type String
+/// @access public
+$disabledButtonClassModifier: -disabled !default;
+
+/// Disabled button background color
+/// @group buttons
+/// @type Color
+/// @access public
+$disabledButtonColor: $darkGray !default;
+
+/// Disabled button background color
+/// @group buttons
+/// @type Color
+/// @access public
+$disabledButtonBackground: $lightGray !default;
+
+/// Disabled button border color
+/// @group buttons
+/// @type Color|Boolean
+/// @access public
+$disabledButtonBorderColor: false !default;
+
+/// Colored button cursor
+/// @group buttons
+/// @type String
+/// @access public
+$disabledButtonCursor: not-allowed !default;
+
+/// Button focus width
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonFocusWidth: .3rem !default;
+
+/// Button focus color opacittty
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonFocusColorOpacity: .5 !default;
+
+/// Button focus color
+/// @group buttons
+/// @type Color
+/// @access publicv
+$buttonFocusColor: rgba($buttonBackground, $buttonFocusColorOpacity) !default;
+
+/// Button focus blur
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonFocusBlur: 0 !default;
+
+/// Button focus box shadow
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonFocusBoxShadow: 0 0 $buttonFocusBlur $buttonFocusWidth $buttonFocusColor !default;
+
+/// Button active box shadow
+/// @group buttons
+/// @type String
+/// @access public
+$buttonActiveBoxShadow: inset 0 3px 5px rgba($black, .125) !default;
+
+/// Button box shadow
+/// @group buttons
+/// @type String
+/// @access public
+$buttonBoxShadow: inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
+
+/// Button hover background shade amount
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonHoverBackgroundShadeAmount: 15% !default;
+
+/// Button hover background tint amount
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonHoverBackgroundTintAmount: 15% !default;
+
+/// Button hover border shade amount
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonHoverBorderShadeAmount: 20% !default;
+
+/// Button hover background tint amount
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonHoverBorderTintAmount: 10% !default;
+
+/// Button active background shade amount
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonActiveBackgroundShadeAmount: 20% !default;
+
+/// Button active background tint amount
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonActiveBackgroundTintAmount: 20% !default;
+
+/// Button active border shade amount
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonActiveBorderShadeAmount: 25% !default;
+
+/// Button active border tint amount
+/// @group buttons
+/// @type Number
+/// @access public
+$buttonActiveBorderTintAmount: 10% !default;
+
+/// Code font color
+/// @group code
+/// @type Color
+/// @access public
+$codeColor: $darkestGray !default;
+
+/// Code font
+/// @group code
+/// @type List
+/// @access public
+$codeFont: monospace !default;
+
+/// Code font size
+/// @group code
+/// @type Number
+/// @access public
+$codeFontSize: $baseFontSize !default;
+
+/// Code line height
+/// @group code
+/// @type Number
+/// @access public
+$codeLineHeight: 1.4em !default;
+
+/// Code background color
+/// @group code
+/// @type Color
+/// @access public
+$codeBackground: $lighterGray !default;
+
+/// Code border color
+/// @group code
+/// @type Boolean
+/// @access public
+$codeBorderColor: false !default;
+
+/// Code rounded
+/// @group code
+/// @type Boolean
+/// @access public
+$codeRounded: false !default;
+
+/// Code horizontal padding
+/// @group code
+/// @type Number
+/// @access public
+$codePaddingHorizontal: .5em !default;
+
+/// Code vertical padding
+/// @group code
+/// @type Number
+/// @access public
+$codePaddingVertical: .2em !default;
+
+/// Code block color
+/// @group code
+/// @type Color
+/// @access public
+$codeBlockColor: $lightestGray !default;
+
+/// Code block font
+/// @group code
+/// @type List
+/// @access public
+$codeBlockFont: $codeFont !default;
+
+/// Code block font size
+/// @group code
+/// @type Number
+/// @access public
+$codeBlockFontSize: 1.3rem !default;
+
+/// Code block line height
+/// @group code
+/// @type Number
+/// @access public
+$codeBlockLineHeight: $paragraphLineHeight !default;
+
+/// Code block tab size
+/// @group code
+/// @type Number
+/// @access public
+$codeBlockTabSize: 4 !default;
+
+/// Code block wrap
+/// @group code
+/// @type Boolean
+/// @access public
+$codeBlockWrap: false !default;
+
+/// Code block margin botttom
+/// @group code
+/// @type Number
+/// @access public
+$codeBlockMarginBottom: $blockMarginBottom !default;
+
+/// Code block background color
+/// @group code
+/// @type Color
+/// @access public
+$codeBlockBackground: $darkestGray !default;
+
+/// Code block border color
+/// @group code
+/// @type Color
+/// @access public
+$codeBlockBorderColor: $codeBorderColor !default; // false to disable
+
+/// Code block rounded
+/// @group code
+/// @type Boolean
+/// @access public
+$codeBlockRounded: false !default;
+
+/// Code block horizontal padding
+/// @group code
+/// @type Number
+/// @access public
+$codeBlockPaddingHorizontal: 2rem !default;
+
+/// Code block vertical padding
+/// @group code
+/// @type Number
+/// @access public
+$codeBlockPaddingVertical: 1.4rem !default;
+
+/// Table font size
+/// @group table
+/// @type Number
+/// @access public
+$tableFontSize: $baseFontSize !default;
+
+/// Table bordered class moddifier
+/// @group table
+/// @type String
+/// @access public
+$tableBorderedClassModifier: -bordered !default;
+
+/// Table striped class modifier
+/// @group table
+/// @type String
+/// @access public
+$tableStripedClassModifier: -striped !default;
+
+/// Table cell line heightt
+/// @group table
+/// @type Number
+/// @access public
+$tableCellLineHeight: $paragraphLineHeight !default;
+
+/// Table cell border color
+/// @group table
+/// @type Color
+/// @access public
+$tableCellBorderColor: $lighterGray !default;
+
+/// Table cell horizoontal padding
+/// @group table
+/// @type Number
+/// @access public
+$tableCellPaddingHorizontal: 1.6rem !default;
+
+/// Table cell vertical padding
+/// @group table
+/// @type Number
+/// @access public
+$tableCellPaddingVertical: .6rem !default;
+
+/// Table capttion font tstyle
+/// @group table
+/// @type String
+/// @access public
+$tableCaptionFontStyle: italic !default;
+
+/// Table caption background color
+/// @group table
+/// @type Color
+/// @access public
+$tableCaptionBackground: $lightestGray !default;
+
+/// Table caption horizoontal padding
+/// @group table
+/// @type Number
+/// @access public
+$tableCaptionPaddingVertical: 1.2rem !default;
+
+/// Table caption vertical padding
+/// @group table
+/// @type Number
+/// @access public
+$tableCaptionPaddingHorizontal: $tableCellPaddingHorizontal !default;
+
+/// Table striped background color
+/// @group table
+/// @type Color
+/// @access public
+$tableStripedBackground: $lightestGray !default;
+
+/// Table striped position
+/// @group table
+/// @type String [even, odd]
+/// @access public
+$tableStripedPosition: odd !default; // even, odd
+
+/// Input color
+/// @group forms
+/// @type Color
+/// @access public
+$inputColor: $darkerGray !default;
+
+/// Input font
+/// @group forms
+/// @type List
+/// @access public
+$inputFont: $baseFont !default;
+
+/// Input font size
+/// @group forms
+/// @type Number
+/// @access public
+$inputFontSize: $baseFontSize !default;
+
+/// Input font weight
+/// @group forms
+/// @type Number
+/// @access public
+$inputFontWeight: $baseFontWeight !default;
+
+/// Input background color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBackground: $white !default;
+
+/// Input border color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBorderColor: $lighterGray !default;
+
+/// Input border hover color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBorderColorHover: darken($inputBorderColor, 10%) !default;
+
+/// Input border focus color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBorderColorFocus: darken($inputBorderColor, 20%) !default;
+
+/// Input border width
+/// @group forms
+/// @type Number|Boolean
+/// @access public
+$inputBorderWidth: 1px !default;
+
+/// Input bordder radius
+/// @group forms
+/// @type Number|Boolean
+/// @access public
+$inputRounded: $defaultRadius !default;
+
+/// Input minimum width
+/// @group forms
+/// @type Number|Boolean
+/// @access public
+$inputMinWidth: 20rem !default;
+
+/// Input minimum heightt
+/// @group forms
+/// @type Number|Boolean
+/// @access public
+$inputMinHeight: 3rem !default;
+
+/// Input horizontal padding
+/// @group forms
+/// @type Number
+/// @access public
+$inputPaddingHorizontal: 1.6rem !default;
+
+/// Input vertical padding
+/// @group forms
+/// @type Number
+/// @access public
+$inputPaddingVertical: 1rem !default;
+
+/// Input margin bottom
+/// @group forms
+/// @type Number
+/// @access public
+$inputMarginBottom: 2rem !default;
+
+/// Input placeholder color
+/// @group forms
+/// @type Color
+/// @access public
+$inputPlaceholderColor: lighten($inputColor, 40%) !default;
+
+/// Input invalid background color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBackgroundInvalid: $white !default;
+
+/// Input invalid border color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBorderColorInvalid: #a41818 !default;
+
+/// Input invalid color
+/// @group forms
+/// @type Color
+/// @access public
+$inputColorInvalid: darken($inputBorderColorInvalid, 10%) !default;
+
+/// Input placeholder color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBorderColorInvalidHover: darken($inputBorderColorInvalid, 10%) !default;
+
+/// Input invalid border color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBorderColorInvalidFocus: darken($inputBorderColorInvalid, 20%) !default;
+
+/// Input invalid border width
+/// @group forms
+/// @type Number|Boolean
+/// @access public
+$inputBorderWidthInvalid: 1px !default; // false to disable
+
+/// Input required background color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBackgroundRequired: $white !default;
+
+/// Input required border color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBorderColorRequired: $darkGray !default;
+
+/// Input required color
+/// @group forms
+/// @type Color
+/// @access public
+$inputColorRequired: darken($inputBorderColorRequired, 10%) !default;
+
+/// Input required border hover color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBorderColorRequiredHover: darken($inputBorderColorRequired, 10%) !default;
+
+/// Input required border focus color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBorderColorRequiredFocus: darken($inputBorderColorRequired, 20%) !default;
+
+/// Input required border width
+/// @group forms
+/// @type Number|Boolean
+/// @access public
+$inputBorderWidthRequired: 1px !default;
+
+/// Input disabled color
+/// @group forms
+/// @type Color
+/// @access public
+$inputColorDisabled: $darkGray !default;
+
+/// Input disabled background color
+/// @group forms
+/// @type Color
+/// @access public
+$inputBackgroundDisabled: $lightestGray !default;
+
+/// Input disabled border width
+/// @group forms
+/// @type Number|Boolean
+/// @access public
+$inputBorderWidthDisabled: false !default;
+
+/// Input disabled cursor
+/// @group forms
+/// @type String
+/// @access public
+$inputCursorDisabled: not-allowed !default;
+
+/// Input disabled modifier class
+/// @group forms
+/// @type String
+/// @access public
+$inputDisabledModifier: -disabled !default;
+
+/// Input disabled cursor
+/// @group forms
+/// @type String
+/// @access public
+$inputDisabledCursor: not-allowed !default;
+
+/// Multi select minimum height
+/// @group forms
+/// @type Number
+/// @access public
+$multiSelectMinHeight: 8rem !default;
+
+/// Checkbox margin bottom
+/// @group forms
+/// @type Number
+/// @access public
+$checkboxMarginBottom: 1rem !default;
+
+/// Checkbox margin right
+/// @group forms
+/// @type Number
+/// @access public
+$checkboxMarginRight: .5rem !default;
+
+/// Textarea line height
+/// @group forms
+/// @type Number
+/// @access public
+$textareaLineHeight: 1.3em !default;
+
+/// Textarea minimum height
+/// @group forms
+/// @type Number
+/// @access public
+$textareaMinHeight: 8rem !default;
+
+/// Textarea resize property
+/// @group forms
+/// @type String
+/// @access public
+$textareaResize: vertical !default; // none, horizontal, vertical, both
+
+/// Textarea horizontal padding
+/// @group forms
+/// @type Number
+/// @access public
+$textareaPaddingHorizontal: 1.6rem !default;
+
+/// Textarea vertical padding
+/// @group forms
+/// @type Number
+/// @access public
+$textareaPaddingVertical: 1rem !default;
+
+/// Legend color
+/// @group forms
+/// @type Color
+/// @access public
+$legendColor: $darkerGray !default;
+
+/// Legend font
+/// @group forms
+/// @type List
+/// @access public
+$legendFont: $baseFont !default;
+
+/// Legend font size
+/// @group forms
+/// @type Color
+/// @access public
+$legendFontSize: 1.8rem !default;
+
+/// Legend margin bottom
+/// @group forms
+/// @type Number
+/// @access public
+$legendMarginBottom: 1.4rem !default;
+
+/// Label font wieght
+/// @group forms
+/// @type String
+/// @access public
+$labelFontWeight: normal !default;
+
+/// Label line height
+/// @group forms
+/// @type Number
+/// @access public
+$labelLineHeight: 1.3em !default;
+
+/// Label margin bottom
+/// @group forms
+/// @type Number
+/// @access public
+$labelMarginBottom: .4rem !default;
+
+/// Label margin right
+/// @group forms
+/// @type Number
+/// @access public
+$labelMarginRight: 1rem !default;
+
