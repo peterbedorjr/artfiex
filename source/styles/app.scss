@@ -1,15 +1,10 @@
-@import './variables';
-@import './mixins';
-@import './responsive';
-@import '../core/styles/reset';
-@import '../core/styles/components/buttons';
-@import '../core/styles/components/code';
-@import '../core/styles/components/forms';
-@import '../core/styles/components/helpers';
-@import '../core/styles/components/tables';
-
-@include tablet() {
-    body {
-        z-index: 10;
-    }
-}
+@import 'variables';
+@import 'mixins';
+@import 'responsive/mixins';
+@import 'responsive/breakpoints';
+@import '~artifex-core/styles/functions';
+@import '~artifex-core/styles/variables';
+@import '~artifex-core/styles/mixins';
+@import '~artifex-core/styles/reset';
+@import '~artifex-core/styles/components/buttons';
+@import '~artifex-core/styles/components/forms';

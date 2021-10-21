@@ -1,5 +1,5 @@
-import assets from '../core/scripts/assets';
-import createRouteHandler from '../core/scripts/createRouteHandler';
+import assets from 'artifex-core/scripts/assets';
+import createRouteHandler from 'artifex-core/scripts/createRouteHandler';
 
 export default createRouteHandler(async () => {
     assets.load({

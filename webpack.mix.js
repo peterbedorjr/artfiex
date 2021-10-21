@@ -7,9 +7,22 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
+require('./ResponsiveMixPlugin');
 
 mix.options({
     manifest: false,
+});
+
+mix.breakpoints({
+    breakpoints: {
+        mobileLandscape: 480,
+        tablet: 768,
+        desktop: 1024,
+        desktop2: 1280,
+        desktop3: 1440,
+    },
+    offset: 25,
+    output: 'source/styles/responsive',
 });
 
 mix.setPublicPath('public');
@@ -73,9 +86,7 @@ mix.webpackConfig({
             fix: true,
             formatter: require('eslint/lib/cli-engine/formatters/codeframe'),
         }),
-        // new StylelintPlugin({
-        //     formatter: require('stylelint-codeframe-formatter'),
-        // }),
+        new StylelintPlugin(),
     ],
 });
 
