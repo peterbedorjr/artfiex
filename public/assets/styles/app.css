@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* stylelint-disable */
 /* stylelint-disable */
 /* stylelint-disable */
@@ -126,6 +127,7 @@ legend {
   float: left;
   width: 100%;
   padding: 0;
+  margin-bottom: 4rem;
   line-height: inherit;
 }
 legend + * {
@@ -187,6 +189,73 @@ progress {
 
 [hidden] {
   display: none !important;
+}
+
+main {
+  display: block;
+}
+
+img {
+  display: inline-block;
+}
+
+embed,
+img,
+object,
+video {
+  max-width: 100%;
+}
+
+svg {
+  overflow: hidden;
+}
+
+embed,
+object {
+  height: 100%;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+canvas {
+  -ms-touch-action: double-tap-zoom;
+}
+
+iframe {
+  border: 0;
+  margin-bottom: 4rem;
+}
+
+figure {
+  border: none;
+  margin-bottom: 4rem;
+  padding: 4rem;
+  position: relative;
+  text-align: center;
+}
+figure img {
+  margin-bottom: 4rem;
+}
+figure figcaption {
+  color: #737373;
+  font-style: italic;
+  line-height: 1.7em;
+}
+
+::-moz-selection {
+  background: #0d6efd;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #0d6efd;
+  color: #fff;
+  text-shadow: none;
 }
 
 .button {
@@ -654,35 +723,290 @@ progress {
   margin-right: 1rem;
 }
 
+textarea {
+  vertical-align: top;
+}
 textarea.input {
   min-height: 3rem;
 }
 
-@media (min-width: 455px) {
+p {
+  margin-bottom: 2rem;
+  font-weight: normal;
+  line-height: 1.7em;
+  color: #404040;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+mark {
+  background-color: yellow;
+  color: #404040;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted #404040;
+  cursor: help;
+}
+
+sub,
+sup {
+  font-size: 0.7em;
+  line-height: 0;
+  margin-left: 0.2em;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -1em;
+}
+
+.h6,
+h6, .h5,
+h5, .h4,
+h4, .h3,
+h3, .h2,
+h2, .h1,
+h1 {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight: bold;
+  line-height: 1.4em;
+  color: inherit;
+  margin-bottom: 2rem;
+}
+.h6 small,
+h6 small, .h5 small,
+h5 small, .h4 small,
+h4 small, .h3 small,
+h3 small, .h2 small,
+h2 small, .h1 small,
+h1 small {
+  font-weight: normal;
+}
+
+.h1,
+h1 {
+  font-size: 3.6rem;
+}
+
+.h2,
+h2 {
+  font-size: 3.2rem;
+}
+
+.h3,
+h3 {
+  font-size: 2.8rem;
+}
+
+.h4,
+h4 {
+  font-size: 2.4rem;
+}
+
+.h5,
+h5 {
+  font-size: 2rem;
+}
+
+.h6,
+h6 {
+  font-size: 1.6rem;
+}
+
+small {
+  font-size: 0.8em;
+}
+
+dfn,
+em,
+i,
+var {
+  font-style: italic;
+}
+
+blockquote,
+q {
+  font-family: Georgia, Times, serif;
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 1.4em;
+  font-style: italic;
+  color: #404040;
+}
+blockquote cite,
+q cite {
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 1.2em;
+  font-style: normal;
+  color: #a6a6a6;
+  margin-top: 1.4rem;
+}
+blockquote cite:before,
+q cite:before {
+  content: "— ";
+}
+blockquote p,
+q p {
+  color: #404040;
+}
+
+blockquote {
+  margin-bottom: 4rem;
+  padding: 1em 2em;
+}
+blockquote cite {
+  display: block;
+}
+
+del,
+s,
+strike {
+  text-decoration: line-through;
+}
+
+a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+a:focus {
+  outline: thin dotted;
+  outline-offset: 2px;
+}
+a:hover {
+  color: #0b5ed7;
+  text-decoration: underline;
+}
+a:active {
+  color: #0a53be;
+}
+a img {
+  border: 0;
+}
+
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #bfbfbf;
+  display: block;
+  height: 1px;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+
+address {
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 1.7em;
+  font-style: normal;
+  color: #404040;
+  margin-bottom: 4rem;
+}
+
+dl,
+ol,
+ul {
+  color: #404040;
+  line-height: 1.7em;
+  list-style-position: inside;
+  margin-bottom: 2rem;
+}
+dl li,
+ol li,
+ul li {
+  margin-bottom: 0.2rem;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin-bottom: 0;
+  margin-left: 2rem;
+}
+
+ul {
+  list-style-type: disc;
+}
+ul ul {
+  list-style-type: circle;
+}
+ul ul ul {
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+nav ol,
+nav ul {
+  list-style: none;
+  margin: 0;
+}
+nav ol li,
+nav ul li {
+  margin-bottom: 0;
+}
+
+dl {
+  margin-bottom: 4rem;
+}
+
+dt {
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.6rem;
+  color: #595959;
+  margin-bottom: 0.2rem;
+}
+
+dd {
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.6rem;
+  color: #a6a6a6;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 455px){
   html {
     font-family: "2";
   }
 }
 
-@media (min-width: 743px) {
+@media (min-width: 743px){
   html {
     font-family: "3";
   }
 }
 
-@media (min-width: 999px) {
+@media (min-width: 999px){
   html {
     font-family: "4";
   }
 }
 
-@media (min-width: 1255px) {
+@media (min-width: 1255px){
   html {
     font-family: "5";
   }
 }
 
-@media (min-width: 1415px) {
+@media (min-width: 1415px){
   html {
     font-family: "6";
   }

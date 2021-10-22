@@ -1402,10 +1402,33 @@ var U = undefined;
 
 /***/ }),
 
-/***/ "./source/pages/Home.js":
-/*!******************************!*\
-  !*** ./source/pages/Home.js ***!
-  \******************************/
+/***/ "./source/scripts/app.js":
+/*!*******************************!*\
+  !*** ./source/scripts/app.js ***!
+  \*******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var navigo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! navigo */ "./node_modules/navigo/lib/navigo.min.js");
+/* harmony import */ var navigo__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(navigo__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Home */ "./source/scripts/pages/Home.js");
+/* harmony import */ var _pages_User__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/User */ "./source/scripts/pages/User.js");
+
+
+
+var router = new (navigo__WEBPACK_IMPORTED_MODULE_0___default())('/');
+router.on({
+  '/': _pages_Home__WEBPACK_IMPORTED_MODULE_1__["default"],
+  '/users/:user': _pages_User__WEBPACK_IMPORTED_MODULE_2__["default"]
+}).resolve();
+
+/***/ }),
+
+/***/ "./source/scripts/pages/Home.js":
+/*!**************************************!*\
+  !*** ./source/scripts/pages/Home.js ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1446,10 +1469,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./source/pages/User.js":
-/*!******************************!*\
-  !*** ./source/pages/User.js ***!
-  \******************************/
+/***/ "./source/scripts/pages/User.js":
+/*!**************************************!*\
+  !*** ./source/scripts/pages/User.js ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1461,32 +1484,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./source/scripts/app.js":
-/*!*******************************!*\
-  !*** ./source/scripts/app.js ***!
-  \*******************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var navigo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! navigo */ "./node_modules/navigo/lib/navigo.min.js");
-/* harmony import */ var navigo__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(navigo__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/Home */ "./source/pages/Home.js");
-/* harmony import */ var _pages_User__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/User */ "./source/pages/User.js");
-
-
-
-var router = new (navigo__WEBPACK_IMPORTED_MODULE_0___default())('/');
-router.on({
-  '/': _pages_Home__WEBPACK_IMPORTED_MODULE_1__["default"],
-  '/users/:user': _pages_User__WEBPACK_IMPORTED_MODULE_2__["default"]
-}).resolve();
-
-/***/ }),
-
-/***/ "./source/styles/app.scss":
+/***/ "./source/styles/all.scss":
 /*!********************************!*\
-  !*** ./source/styles/app.scss ***!
+  !*** ./source/styles/all.scss ***!
   \********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -2397,7 +2397,7 @@ try {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"assets/scripts/app": 0,
-/******/ 			"assets/styles/app": 0
+/******/ 			"assets/styles/all": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -2449,8 +2449,8 @@ try {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["assets/styles/app"], function() { return __webpack_require__("./source/scripts/app.js"); })
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/styles/app"], function() { return __webpack_require__("./source/styles/app.scss"); })
+/******/ 	__webpack_require__.O(undefined, ["assets/styles/all"], function() { return __webpack_require__("./source/scripts/app.js"); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/styles/all"], function() { return __webpack_require__("./source/styles/all.scss"); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

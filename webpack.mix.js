@@ -28,8 +28,7 @@ mix.breakpoints({
 mix.setPublicPath('public');
 
 mix.js('source/scripts/app.js', '/assets/scripts');
-
-mix.sass('source/styles/app.scss', '/assets/styles')
+mix.sass('source/styles/app.scss', '/assets/styles');
 
 // Adds double slashes
 mix.override(config => {
