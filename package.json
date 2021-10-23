@@ -1,34 +1,24 @@
 {
-  "name": "artifex",
-  "version": "1.0.0",
-  "description": "",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
-  "scripts": {
-    "dev": "webpack --config webpack.config.js --mode development",
-    "prod": "webpack --config webpack.config.js --mode production",
-    "start": "webpack serve --config webpack.config.js",
-    "artifex": "artifex"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.15.8",
-    "@babel/plugin-proposal-object-rest-spread": "^7.15.6",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/plugin-transform-runtime": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
-    "artifex-build": "file:../artifex-build",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-vue": "^7.20.0"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.15.4",
-    "artifex-core": "file:../artifex-core",
-    "lodash": "^4.17.21",
-    "mitt": "^3.0.0",
-    "navigo": "^8.11.1",
-    "store2": "^2.12.0",
-    "umbrellajs": "^3.2.3"
-  }
+    "name": "artifex",
+    "version": "1.0.0",
+    "description": "Web development starter kit",
+    "browserslist": "> 0.5%, last 2 versions, not dead",
+    "scripts": {
+        "artifex": "artifex"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@artifexweb/core": "^1.0.1",
+        "@babel/runtime": "^7.15.4",
+        "lodash": "^4.17.21",
+        "mitt": "^3.0.0",
+        "navigo": "^8.11.1",
+        "store2": "^2.12.0",
+        "umbrellajs": "^3.2.3"
+    },
+    "devDependencies": {
+        "@artifexweb/build": "^1.0.1"
+    }
 }

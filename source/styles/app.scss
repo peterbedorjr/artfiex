@@ -1,14 +1,15 @@
 @import 'variables';
 @import 'mixins';
-@import '~artifex-core/styles/functions';
-@import '~artifex-core/styles/variables';
-@import '~artifex-core/styles/mixins';
-@import '~artifex-core/styles/reset';
-@import '~artifex-core/styles/components/buttons';
-@import '~artifex-core/styles/components/forms';
-@import '~artifex-core/styles/components/typography';
-@import '~artifex-build/temp/mixins';
-@import '~artifex-build/temp/breakpoints';
+@import '~@artifexweb/core/styles/functions';
+@import '~@artifexweb/core/styles/variables';
+@import '~@artifexweb/core/styles/mixins';
+@import '~@artifexweb/core/styles/reset';
+@import '~@artifexweb/core/styles/components/buttons';
+@import '~@artifexweb/core/styles/components/forms';
+@import '~@artifexweb/core/styles/components/typography';
+@import '~@artifexweb/build/temp/mixins';
+@import '~@artifexweb/build/temp/breakpoints';
 
-.h1 { background: red; }
-.h2 { font-family: Arial, Helvetica, sans-serif; }
+#global {
+    // Global overrides
+}
