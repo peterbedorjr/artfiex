@@ -1,5 +1,3 @@
-/* eslint-disable import/newline-after-import */
-
 const { browserslist } = require('./package.json');
 
 module.exports = {

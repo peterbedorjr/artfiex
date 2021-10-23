@@ -1,7 +1,5 @@
 @import 'variables';
 @import 'mixins';
-@import 'responsive/mixins';
-@import 'responsive/breakpoints';
 @import '~artifex-core/styles/functions';
 @import '~artifex-core/styles/variables';
 @import '~artifex-core/styles/mixins';
@@ -9,3 +7,8 @@
 @import '~artifex-core/styles/components/buttons';
 @import '~artifex-core/styles/components/forms';
 @import '~artifex-core/styles/components/typography';
+@import '~artifex-build/temp/mixins';
+@import '~artifex-build/temp/breakpoints';
+
+.h1 { background: red; }
+.h2 { font-family: Arial, Helvetica, sans-serif; }
