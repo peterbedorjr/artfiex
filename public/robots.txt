@@ -1,5 +1,0 @@
-#sitemap: https://www.domain.com/sitemap.xml
-
-user-agent: *
-disallow:
-#disallow: /guide

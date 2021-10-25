@@ -8,9 +8,5 @@ export default createRouteHandler(async () => {
             '/mapbox-gl/1.13.2/mapbox-gl.js',
             '/hover.css/2.3.1/css/hover-min.css',
         ],
-    }).then(() => {
-        console.log('test');
-    }).catch((err) => {
-        console.log('err', err);
     });
 });
