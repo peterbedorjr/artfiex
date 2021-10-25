@@ -4,7 +4,9 @@
     "description": "Web development starter kit",
     "browserslist": "> 0.5%, last 2 versions, not dead",
     "scripts": {
-        "artifex": "artifex"
+        "artifex": "artifex",
+        "build": "artifex build",
+        "dev": "artifex build --mode=development"
     },
     "keywords": [],
     "author": "",
@@ -19,6 +21,6 @@
         "umbrellajs": "^3.2.3"
     },
     "devDependencies": {
-        "@artifexweb/build": "^1.0.1"
+        "@artifexweb/build": "^1.1.1"
     }
 }
