@@ -1,49 +1,26 @@
 {
-  "name": "artifex",
-  "version": "1.0.0",
-  "description": "",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
-  "scripts": {
-    "dev": "npm run development",
-    "development": "mix",
-    "watch": "mix watch",
-    "watch:poll": "mix watch -- --watch-options-poll=1000",
-    "hot": "mix watch --hot",
-    "prod": "npm run production",
-    "production": "mix --production",
-    "lint:styles": "npx stylelint source/styles/**/*.scss"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.15.8",
-    "@squoosh/lib": "^0.4.0",
-    "autoprefixer": "^10.3.7",
-    "browser-sync": "^2.27.5",
-    "browser-sync-webpack-plugin": "^2.3.0",
-    "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^9.0.1",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-vue": "^7.19.1",
-    "eslint-webpack-plugin": "^3.0.1",
-    "html-webpack-plugin": "^5.4.0",
-    "image-minimizer-webpack-plugin": "^2.2.0",
-    "laravel-mix": "^6.0.34",
-    "laravel-mix-clean": "^0.1.0",
-    "postcss-combine-media-query": "^1.0.1",
-    "resolve-url-loader": "^4.0.0",
-    "sass-loader": "^12.2.0",
-    "stylelint-codeframe-formatter": "^1.0.5",
-    "stylelint-config-standard": "^22.0.0",
-    "stylelint-order": "^4.1.0",
-    "stylelint-webpack-plugin": "^3.0.1"
-  },
-  "dependencies": {
-    "mitt": "^3.0.0",
-    "navigo": "^8.11.1",
-    "store2": "^2.12.0",
-    "umbrellajs": "^3.2.3"
-  }
+    "name": "artifex",
+    "version": "1.0.0",
+    "description": "Web development starter kit",
+    "browserslist": "> 0.5%, last 2 versions, not dead",
+    "scripts": {
+        "artifex": "artifex",
+        "build": "artifex build",
+        "dev": "artifex build --mode=development"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@artifexweb/core": "^1.0.1",
+        "@babel/runtime": "^7.15.4",
+        "lodash": "^4.17.21",
+        "mitt": "^3.0.0",
+        "navigo": "^8.11.1",
+        "store2": "^2.12.0",
+        "umbrellajs": "^3.2.3"
+    },
+    "devDependencies": {
+        "@artifexweb/build": "^1.1.1"
+    }
 }

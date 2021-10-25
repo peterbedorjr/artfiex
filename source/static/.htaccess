@@ -1,0 +1,107 @@
+#------------------------------------
+	# Maintenance
+#------------------------------------
+
+# RewriteCond %{REQUEST_URI} !^/maintenance.html$
+# RewriteCond %{REMOTE_ADDR} !^123.456.789.
+# RewriteCond $1 !^/assets [NC]
+# RewriteRule ^(.*)$ /maintenance.html [R=307,L]
+
+
+#------------------------------------
+	# Setup
+#------------------------------------
+
+RewriteEngine On
+Options +FollowSymLinks -Indexes -MultiViews
+
+# Character set
+AddDefaultCharset utf-8
+AddCharset utf-8 .atom .css .geojson .js .json .jsonld .manifest .map .rss .xml
+
+# Internet Explorer document mode
+Header set X-UA-Compatible "IE=edge"
+
+# Security headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options SAMEORIGIN
+# Header set X-XSS-Protection "1; mode=block"
+# Header always set Strict-Transport-Security "max-age=7776000; includeSubDomains"
+
+# Conditionally target static assets
+<FilesMatch "\.(css|eot|gif|ico|jpe?g|otf|png|svg|ttf|webp|woff2?)$">
+	SetEnv IS_STATIC true
+	Header set Cache-control max-age=2592000
+	Header unset X-UA-Compatible
+	Header unset X-Frame-Options
+	# Header unset X-XSS-Protection
+</FilesMatch>
+
+
+#------------------------------------
+	# Remote Assets
+#------------------------------------
+
+# Cross-origin images
+<FilesMatch "\.(bmp|gif|ico|jpe?g|png|svg|webp)$">
+	SetEnvIf Origin ":" IS_CORS
+	Header always set Access-Control-Allow-Origin "*" env=IS_CORS
+</FilesMatch>
+
+# Cross-origin web fonts
+<FilesMatch "\.(eot|otf|ttf|woff2?)$">
+	Header always set Access-Control-Allow-Origin "*"
+</FilesMatch>
+
+
+#------------------------------------
+	# Errors
+#------------------------------------
+
+ErrorDocument 404 /404.html
+
+
+#------------------------------------
+	# Project
+#------------------------------------
+
+# Custom redirects and rewrites
+
+
+#------------------------------------
+	# Rewrites
+#------------------------------------
+
+# Force www
+# RewriteCond %{HTTP_HOST} !^www.domain.com$ [NC]
+# RewriteRule ^(.*)$ http://www.domain.com/$1 [R=301,L]
+
+# Remove www (use either force or remove)
+# RewriteCond %{HTTP_HOST} !^domain.com$ [NC]
+# RewriteRule ^(.*)$ http://domain.com/$1 [R=301,L]
+
+# Force SSL
+# RewriteCond %{HTTPS} !on
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Remove trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# Remove multiple slashes
+RewriteCond %{THE_REQUEST} //
+RewriteRule ^(.*)$ /$1 [R=301,L]
+
+# Remove index reference
+RewriteCond %{REQUEST_URI} ^(.*/)index.html$ [NC]
+RewriteRule . %1 [R=301,L]
+
+# Remove extension
+RewriteCond %{REQUEST_URI} ^GET\ (.*).html(.*)\ HTTP
+RewriteRule (.*).html$ $1$2 [R=301]
+
+# Rewrite extension
+RewriteCond %{ENV:IS_STATIC} !true
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule (.*) $1.html [L]
