@@ -1,10 +1,14 @@
 const { merge } = require('webpack-merge');
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
+
+const args = yargs(hideBin(process.argv)).argv;
 
 const components = [
     'clean',
     'base',
     'css',
-    // 'stylelint', // TODO
+    'stylelint', // TODO
     'javascript',
     'vue',
     'eslint',

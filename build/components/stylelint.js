@@ -4,7 +4,8 @@ module.exports = {
     plugins: [
         new StylelintPlugin({
             fix: process.env.FIX_STYLES === true,
-            formatter: require('stylelint-codeframe-formatter'),
+            // TODO: Codeframe formatter is slow?
+            // formatter: require('stylelint-codeframe-formatter'),
         }),
     ],
 };
