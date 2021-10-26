@@ -1,5 +1,5 @@
 import createRouteHandler from '@artifexweb/core/scripts/createRouteHandler';
-import './Home.scss';
+import './index.scss';
 
 export default createRouteHandler(async () => {
     //
