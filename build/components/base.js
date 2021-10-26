@@ -1,5 +1,4 @@
 const WebpackBar = require('webpackbar');
-const FriendlyErrorsPlugin = require('@soda/friendly-errors-webpack-plugin');
 const path = require('path');
 
 const env = process.env.NODE_ENV === undefined
@@ -14,14 +13,15 @@ module.exports = {
         ? 'eval'
         : 'source-map',
     entry: {
-        ['assets/scripts/app']: './source/scripts/app.js',
+        app: './source/scripts/app.js',
     },
     output: {
         path: path.resolve(__dirname, '../../public'),
-        filename: '[name].[contenthash:8].js',
+        filename: 'assets/scripts/[name].[contenthash:8].js',
+        chunkFilename: 'assets/scripts/[name].[contenthash:8].js',
+        publicPath: '/',
     },
     plugins: [
         new WebpackBar(),
-        new FriendlyErrorsPlugin(),
     ],
 };

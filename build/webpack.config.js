@@ -4,10 +4,11 @@ const components = [
     'clean',
     'base',
     'css',
-    // 'stylelint',
+    // 'stylelint', // TODO
     'javascript',
+    'vue',
     'eslint',
-    'favicons',
+    // 'favicons',
     'html',
     'copy',
     'devServer',
@@ -17,14 +18,6 @@ if (process.env.NODE_ENV === 'production') {
     components.push('production');
 }
 
-/**
- * Webpack Config
- * @type {{}}
- */
-let config = {};
+/* eslint-disable-next-line global-require */
+module.exports = components.reduce((config, component) => merge(config, require(`./components/${component}`)), {});
 
-components.forEach((component) => {
-    config = merge(config, require(`./components/${component}`));
-});
-
-module.exports = config;
