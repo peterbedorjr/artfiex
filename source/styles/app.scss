@@ -7,9 +7,12 @@
 @import '~@artifexweb/core/styles/components/buttons';
 @import '~@artifexweb/core/styles/components/forms';
 @import '~@artifexweb/core/styles/components/typography';
-@import '~@artifexweb/build/temp/mixins';
-@import '~@artifexweb/build/temp/breakpoints';
 
 #global {
     // Global overrides
+}
+
+body {
+    color: blue;
+    background: red;
 }

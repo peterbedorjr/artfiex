@@ -1,0 +1,10 @@
+/* stylelint-disable */
+@mixin mobileLandscape() { @media (min-width: 455px) { @content; } }
+
+@mixin tablet() { @media (min-width: 743px) { @content; } }
+
+@mixin desktop() { @media (min-width: 999px) { @content; } }
+
+@mixin desktop2() { @media (min-width: 1255px) { @content; } }
+
+@mixin desktop3() { @media (min-width: 1415px) { @content; } }
