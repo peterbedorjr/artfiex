@@ -277,3 +277,5 @@ import screen from '@artifexweb/core/scripts/screen'
     
 screen.size();
 ```
+
+## Assets
